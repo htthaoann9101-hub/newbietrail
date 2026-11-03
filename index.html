@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bạn mới chạy trail đang thắc mắc điều gì? | Kailas FUGA</title>
+<style>
+:root{--bg:#fff;--fg:#111;--mut:#666;--line:#ddd;--acc:#111;--err:#b00020}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:640px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.6rem;line-height:1.25;margin:0 0 8px}
+.intro{color:var(--mut);margin:0 0 24px}
+fieldset{border:0;border-top:2px solid var(--fg);padding:16px 0 8px;margin:0 0 16px}
+legend{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;padding:0 8px 0 0}
+.q{margin:0 0 22px}
+.q>label,.q>.lab{display:block;font-weight:600;margin-bottom:8px}
+.hint{font-weight:400;color:var(--mut);font-size:.85rem}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:6px 0}
+.opt input{margin-top:5px;accent-color:var(--acc)}
+textarea,input[type=text]{width:100%;font:inherit;padding:10px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--fg)}
+textarea{min-height:76px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--fg);outline-offset:1px}
+button{font:inherit;font-weight:700;background:var(--fg);color:var(--bg);border:0;padding:14px 28px;border-radius:4px;cursor:pointer;width:100%}
+button:disabled{opacity:.5}
+.err{color:var(--err);font-size:.9rem;margin-top:6px;min-height:1em}
+#done{display:none;text-align:center;padding:48px 0}
+.note{color:var(--mut);font-size:.85rem;margin-top:8px}
+</style>
+</head>
+<body>
+<main>
+<div id="wrap">
+<h1>Bạn mới chạy trail đang thắc mắc điều gì?</h1>
+<p class="intro">Xin chào bạn, form này nhằm thu thập các thông tin cần thiết để xây dựng nội dung chia sẻ cho những người mới bắt đầu tham gia môn trail. Nhờ bạn dành ít phút tham gia khảo sát nhe. Cảm ơn bạn thật nhiềuuuuuu</p>
+<form id="f" novalidate>
+<input type="text" name="website" id="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+<fieldset><legend>Về bạn</legend>
+<div class="q" data-req="1"><div class="lab">1. Kinh nghiệm chạy trail của bạn?</div>
+<label class="opt"><input type="radio" name="q1" value="Chưa thử, đang muốn thử">Chưa thử, đang muốn thử</label>
+<label class="opt"><input type="radio" name="q1" value="Dưới 6 tháng">Dưới 6 tháng</label>
+<label class="opt"><input type="radio" name="q1" value="6–12 tháng">6–12 tháng</label>
+<label class="opt"><input type="radio" name="q1" value="Trên 1 năm">Trên 1 năm</label><div class="err"></div></div>
+<div class="q" data-req="1"><div class="lab">2. Bạn chạy bộ đều đặn không?</div>
+<label class="opt"><input type="radio" name="q2" value="Chưa chạy">Chưa chạy</label>
+<label class="opt"><input type="radio" name="q2" value="1–2 buổi mỗi tuần">1–2 buổi mỗi tuần</label>
+<label class="opt"><input type="radio" name="q2" value="3 buổi mỗi tuần trở lên">3 buổi mỗi tuần trở lên</label><div class="err"></div></div>
+<div class="q"><div class="lab">3. Cự ly bạn muốn hướng tới?</div>
+<label class="opt"><input type="radio" name="q3" value="Dưới 10K">Dưới 10K</label>
+<label class="opt"><input type="radio" name="q3" value="10–21K">10–21K</label>
+<label class="opt"><input type="radio" name="q3" value="42K trở lên">42K trở lên</label>
+<label class="opt"><input type="radio" name="q3" value="Chưa biết">Chưa biết</label></div>
+</fieldset>
+
+<fieldset><legend>Gear</legend>
+<div class="q"><label for="g1">4. Bạn đang có ý định mua gear nào và điều gì làm bạn cân nhắc?</label><textarea id="g1" name="g1"></textarea></div>
+<div class="q" data-req="1"><div class="lab">5. Bạn băn khoăn nhất điều gì về gear? <span class="hint">(chọn nhiều)</span></div>
+<label class="opt"><input type="checkbox" name="q4" value="Chọn giày">Chọn giày</label>
+<label class="opt"><input type="checkbox" name="q4" value="Chọn vest, bình nước">Chọn vest, bình nước</label>
+<label class="opt"><input type="checkbox" name="q4" value="Quần áo, tất">Quần áo, tất</label>
+<label class="opt"><input type="checkbox" name="q4" value="Gậy">Gậy</label>
+<label class="opt"><input type="checkbox" name="q4" value="Đèn">Đèn</label>
+<label class="opt"><input type="checkbox" name="q4" value="Đồ bắt buộc khi đi race">Đồ bắt buộc khi đi race</label>
+<label class="opt"><input type="checkbox" name="q4" value="Chăm sóc và bảo quản gear">Chăm sóc và bảo quản gear</label>
+<label class="opt"><input type="checkbox" name="q4" value="Ngân sách, nên mua gì trước">Ngân sách, nên mua gì trước</label>
+<label class="opt"><input type="checkbox" name="q4" value="Khác">Khác</label><div class="err"></div></div>
+<div class="q"><label for="g2">6. Bạn có điều gì thắc mắc khi chuẩn bị mua gear?</label><textarea id="g2" name="g2"></textarea></div>
+<div class="q"><label for="q5">7. Bạn từng mua nhầm gear nào chưa, và vì sao?</label><textarea id="q5" name="q5"></textarea></div>
+<div class="q"><label for="q6">8. Món gear nào bạn chưa biết chọn hoặc dùng thế nào?</label><textarea id="q6" name="q6"></textarea></div>
+</fieldset>
+
+<fieldset><legend>Ngoài gear</legend>
+<div class="q" data-req="1"><div class="lab">9. Điều bạn lo nhất khi bắt đầu trail? <span class="hint">(chọn tối đa 3)</span></div>
+<label class="opt"><input type="checkbox" name="q7" value="An toàn, sợ lạc đường">An toàn, sợ lạc đường</label>
+<label class="opt"><input type="checkbox" name="q7" value="Thể lực, tập luyện">Thể lực, tập luyện</label>
+<label class="opt"><input type="checkbox" name="q7" value="Ăn uống, nước khi chạy">Ăn uống, nước khi chạy</label>
+<label class="opt"><input type="checkbox" name="q7" value="Chấn thương, đau, phồng rộp">Chấn thương, đau, phồng rộp</label>
+<label class="opt"><input type="checkbox" name="q7" value="Kỹ thuật chạy dốc lên, dốc xuống">Kỹ thuật chạy dốc lên, dốc xuống</label>
+<label class="opt"><input type="checkbox" name="q7" value="Chọn giải đầu tiên">Chọn giải đầu tiên</label>
+<label class="opt"><input type="checkbox" name="q7" value="Thời tiết">Thời tiết</label>
+<label class="opt"><input type="checkbox" name="q7" value="Chưa có bạn chạy cùng">Chưa có bạn chạy cùng</label>
+<label class="opt"><input type="checkbox" name="q7" value="Tâm lý, sợ không theo kịp">Tâm lý, sợ không theo kịp</label><div class="err"></div></div>
+<div class="q"><div class="lab">10. Bạn muốn nghe ai chia sẻ? <span class="hint">(chọn nhiều)</span></div>
+<label class="opt"><input type="checkbox" name="q8" value="Runner elite">Runner elite</label>
+<label class="opt"><input type="checkbox" name="q8" value="Coach">Coach</label>
+<label class="opt"><input type="checkbox" name="q8" value="Chuyên gia dinh dưỡng">Chuyên gia dinh dưỡng</label>
+<label class="opt"><input type="checkbox" name="q8" value="Chuyên gia phục hồi, vật lý trị liệu">Chuyên gia phục hồi, vật lý trị liệu</label>
+<label class="opt"><input type="checkbox" name="q8" value="Runner bình thường như mình">Runner bình thường như mình</label>
+<label class="opt"><input type="checkbox" name="q8" value="Brand gear khác">Brand gear khác</label></div>
+<div class="q"><div class="lab">11. Hình thức bạn thích? <span class="hint">(chọn nhiều)</span></div>
+<label class="opt"><input type="checkbox" name="q9" value="Ngồi nghe chia sẻ">Ngồi nghe chia sẻ</label>
+<label class="opt"><input type="checkbox" name="q9" value="Cầm và thử gear trực tiếp">Cầm và thử gear trực tiếp</label>
+<label class="opt"><input type="checkbox" name="q9" value="Đi chạy thử cùng nhau ở núi Dinh">Đi chạy thử cùng nhau ở núi Dinh</label></div>
+</fieldset>
+
+<fieldset><legend>Để kết nối với bạn</legend>
+<div class="q"><div class="lab">12. Bạn thường theo dõi thông tin chạy bộ ở đâu? <span class="hint">(chọn nhiều)</span></div>
+<label class="opt"><input type="checkbox" name="q10" value="Zalo group">Zalo group</label>
+<label class="opt"><input type="checkbox" name="q10" value="Facebook">Facebook</label>
+<label class="opt"><input type="checkbox" name="q10" value="Instagram">Instagram</label>
+<label class="opt"><input type="checkbox" name="q10" value="Strava">Strava</label>
+<label class="opt"><input type="checkbox" name="q10" value="Khác">Khác</label></div>
+<div class="q"><div class="lab">13. Khung giờ bạn có thể tham gia các buổi workshop về thể thao? <span class="hint">(chọn nhiều)</span></div>
+<label class="opt"><input type="checkbox" name="q11" value="Sáng Chủ nhật">Sáng Chủ nhật</label>
+<label class="opt"><input type="checkbox" name="q11" value="Sáng thứ Bảy">Sáng thứ Bảy</label>
+<label class="opt"><input type="checkbox" name="q11" value="Tối trong tuần">Tối trong tuần</label>
+<label class="opt"><input type="checkbox" name="q11" value="Khác">Khác</label>
+<label for="q11b" style="display:block;margin:12px 0 6px">Điều gì khiến bạn ngại tham gia một buổi như vậy?</label><textarea id="q11b" name="q11b"></textarea></div>
+<div class="q"><label for="q12">14. Một điều bạn ước ai đó nói cho bạn biết từ ngày đầu thử trail? <span class="hint">(không bắt buộc)</span></label><textarea id="q12" name="q12"></textarea></div>
+</fieldset>
+
+<button type="submit" id="btn">Gửi câu trả lời</button>
+<div class="err" id="gerr" role="alert"></div>
+</form>
+</div>
+<div id="done"><h1>Cảm ơn bạn!</h1><p class="intro">Mình đã nhận được câu trả lời. Chúc bạn những bước chạy trail đầu tiên thật vui.</p></div>
+</main>
+<script>
+// Dán URL web app của Apps Script vào đây (xem hướng dẫn kèm theo)
+const ENDPOINT = "";
+
+const f = document.getElementById('f'), gerr = document.getElementById('gerr'), btn = document.getElementById('btn');
+function vals(n){return [...f.querySelectorAll('[name="'+n+'"]:checked')].map(i=>i.value).join(', ');}
+f.addEventListener('change', e=>{
+  if(e.target.name==='q7'){
+    const c=f.querySelectorAll('[name="q7"]:checked');
+    if(c.length>3){e.target.checked=false;}
+  }
+});
+f.addEventListener('submit', async e=>{
+  e.preventDefault(); gerr.textContent='';
+  let ok=true;
+  f.querySelectorAll('.q[data-req]').forEach(q=>{
+    const filled=q.querySelector('input:checked');
+    q.querySelector('.err').textContent=filled?'':'Bạn chọn giúp mình ít nhất một đáp án nhé.';
+    if(!filled) ok=false;
+  });
+  if(!ok){const first=f.querySelector('.q .err:not(:empty)'); if(first) first.scrollIntoView({block:'center'}); return;}
+  if(document.getElementById('hp').value) return;
+  if(!ENDPOINT){gerr.textContent='Form chưa được cấu hình nơi nhận câu trả lời.';return;}
+  const data=new URLSearchParams({
+    time:new Date().toLocaleString('vi-VN',{timeZone:'Asia/Ho_Chi_Minh'}),
+    q1:vals('q1'),q2:vals('q2'),q3:vals('q3'),g1:f.g1.value,q4:vals('q4'),g2:f.g2.value,q5:f.q5.value,q6:f.q6.value,
+    q7:vals('q7'),q8:vals('q8'),q9:vals('q9'),q10:vals('q10'),q11:vals('q11'),q11b:f.q11b.value,
+    q12:f.q12.value
+  });
+  btn.disabled=true; btn.textContent='Đang gửi...';
+  try{
+    await fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:data});
+    document.getElementById('wrap').style.display='none';
+    document.getElementById('done').style.display='block';
+    window.scrollTo(0,0);
+  }catch(err){
+    gerr.textContent='Chưa gửi được. Bạn kiểm tra mạng và thử lại giúp mình nhé.';
+    btn.disabled=false; btn.textContent='Gửi câu trả lời';
+  }
+});
+</script>
+</body>
+</html>
